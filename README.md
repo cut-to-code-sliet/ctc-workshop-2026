@@ -6,7 +6,7 @@ Welcome! This repo documents everything covered across our 2-month workshop — 
 
 | Track | Description | Notes |
 |-------|-------------|-------|
-| 🧮 [DSA / Competitive Programming](./dsa-cp/README.md) | Data structures, algorithms, problem solving | [Go to notes →](./dsa-cp/README.md) |
+| | 🧮 [DSA / Competitive Programming](./DSA/README.md) | ... | [Go to notes →](./DSA/README.md) |
 | 🌐 [Web Development](./web-dev/README.md) | Frontend, backend, full-stack projects | [Go to notes →](./web-dev/README.md) |
 | 📱 [App Development](./app-dev/README.md) | Mobile app dev (Android/Flutter/React Native) | [Go to notes →](./app-dev/README.md) |
 | 🤖 [AI/ML](./aiml/README.md) | Machine learning, deep learning, AI tools | [Go to notes →](./aiml/README.md) |
