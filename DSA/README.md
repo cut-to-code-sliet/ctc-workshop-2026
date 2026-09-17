@@ -38,15 +38,16 @@
   4. [C++ Switch Case Statement (GfG)](https://www.geeksforgeeks.org/problems/c-switch-case-statement5900/1) — given a number n, if it's between 1 and 10 (inclusive), return the number in words (lowercase), otherwise return "not in range".
   5. [Switch Statement (GfG)](https://www.geeksforgeeks.org/problems/switch-statement/1) — given a number n, use a switch statement to return "One" through "Nine" for n = 1 to 9, and "Unknown" for anything else.
 - **Theory questions:**
-  6. Why do we write `return 0;` at the end of `int main()`? What does the return value of `main()` signify?
-  7. Explain the output of the following program (it outputs `20`):
+6. Why do we write `return 0;` at the end of `int main()`? What does the return value of `main()` signify?
+7. Explain the output of the following program (it outputs `20`):
+
 ```cpp
-     int main(){
-         int y = 3;
-         int z = (++y) + (y = 10);
-         cout << z;
-         return 0;
-     }
+    int main(){
+        int y = 3;
+        int z = (++y) + (y = 10);
+        cout << z;
+        return 0;
+    }
 ```
 
 ---
