@@ -1,6 +1,6 @@
 # CTC Workshop 2026
 
-*Click on a session name below to jump to that session.*
+*Click on the session name below to jump to that session.*
 
 ## Table of Contents
 - [Session 1: C++ Basics, Memory, Operators & Conditionals (17 Sep 2026)](#session-1-c-basics-memory-operators--conditionals-17-sep-2026)
