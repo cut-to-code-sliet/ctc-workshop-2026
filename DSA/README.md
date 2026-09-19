@@ -5,6 +5,7 @@
 ## Table of Contents
 - [Session 1: C++ Basics, Memory, Operators & Conditionals (17 Sep 2026)](#session-1-c-basics-memory-operators--conditionals-17-sep-2026)
 - [Session 2: Switch Case, Bitwise Operators, Loops & Pattern Printing (18 Sep 2026)](#session-2-switch-case-bitwise-operators-loops--pattern-printing-18-sep-2026)
+- [Session 3: Arrays (1D & 2D), Break & Continue, STL Intro & Searching (19 Sep 2026)](#session-3-arrays-1d--2d-break--continue-stl-intro--searching-19-sep-2026)
 
 ---
 
@@ -108,3 +109,42 @@ int main(){
 10. Write a program to check whether a given number is a power of 2 using bitwise operators. — [Power of Two (LeetCode)](https://leetcode.com/problems/power-of-two/)
 11. Write a program to swap two numbers using the XOR bitwise operator, without a third variable.
 12. Given an array where every element appears twice except one, find that one element using XOR. — [Single Number (LeetCode)](https://leetcode.com/problems/single-number/)	
+
+
+---
+
+## Session 3: Arrays (1D & 2D), Break & Continue, STL Intro & Searching (19 Sep 2026)
+
+### Topics Covered
+- **Arrays**
+  - 1D arrays: declaration, initialization, indexing, traversal
+  - 2D arrays: rows and columns, nested loops for traversal
+- **`break` and `continue`** in loops — exiting a loop early vs. skipping the current iteration
+- **STL (Standard Template Library)** — a brief idea of what it is and why it's useful
+- **Searching**
+  - Linear search
+  - Binary search
+
+### Resources
+- **Arrays (1D)**
+  - [Arrays in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/cpp-arrays/)
+- **Arrays (2D)**
+  - [How to Create Array of Arrays (2D Arrays) in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/how-to-create-array-of-arrays-in-cpp)
+- **`break` and `continue`**
+  - [Break vs Continue Statement – GeeksforGeeks](https://geeksforgeeks.org/break-vs-continue-statement-in-programming)
+  - [continue Statement in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/continue-statement-cpp)
+- **STL (Standard Template Library)**
+  - [C++ STL Tutorial – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/cpp-stl-tutorial/)
+  - [C++ STL Cheat Sheet – GeeksforGeeks](https://www.geeksforgeeks.org/cpp-stl-cheat-sheet/)
+- **Linear search**
+  - [Linear Search Algorithm – GeeksforGeeks](https://www.geeksforgeeks.org/linear-search/)
+- **Binary search**
+  - [std::binary_search() in C++ STL – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/binary-search-algorithms-the-c-standard-template-library-stl)
+- **Range-based `for` loop** (for the homework)
+  - [Range-Based for Loop in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/range-based-loop-c)
+- **Pattern printing**
+  - [Pattern Printing in Detail (YouTube)](https://youtu.be/tNm_NNSB3_w?si=XI-6pz2GJy1R0ICR) — for anyone who wants to learn pattern printing in more depth
+
+### Homework
+1. Learn about the **range-based `for` loop** in C++ (syntax and when to use it).
+2. Take input from the user in a **2D array** and print each element.
