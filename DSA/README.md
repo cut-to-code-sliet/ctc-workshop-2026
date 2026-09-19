@@ -145,6 +145,12 @@ int main(){
 - **Pattern printing**
   - [Pattern Printing in Detail (YouTube)](https://youtu.be/tNm_NNSB3_w?si=XI-6pz2GJy1R0ICR) — for anyone who wants to learn pattern printing in more depth
 
+  ### Practice Questions
+Solved in class (Codeforces):
+1. [Codeforces 2203A](https://codeforces.com/problemset/problem/2203/A)
+2. [Codeforces 2193A](https://codeforces.com/problemset/problem/2193/A)
+3. [Codeforces 2194A](https://codeforces.com/problemset/problem/2194/A)
+
 ### Homework
 1. Learn about the **range-based `for` loop** in C++ (syntax and when to use it).
 2. Take input from the user in a **2D array** and print each element.
