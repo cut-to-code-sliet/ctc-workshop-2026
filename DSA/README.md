@@ -153,5 +153,5 @@ Solved in class (Codeforces):
 
 ### Homework
 1. Learn about the **range-based `for` loop** in C++ (syntax and when to use it).
-2. Take input from the user in a **2D array** and print each element.
-3.Homework pdf : (https://drive.google.com/file/d/1jdZFTCmcKE4_UeSs03lIkpY_05CBpViO/view?usp=sharing)
+2. Take input from the user in a **2D array** and print each element.   
+3. Homework pdf : (https://drive.google.com/file/d/1jdZFTCmcKE4_UeSs03lIkpY_05CBpViO/view?usp=sharing)
