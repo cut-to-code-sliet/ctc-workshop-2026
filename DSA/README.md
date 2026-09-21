@@ -155,7 +155,7 @@ Solved in class (Codeforces):
 ### Homework
 1. Learn about the **range-based `for` loop** in C++ (syntax and when to use it).
 2. Take input from the user in a **2D array** and print each element.   
-3. Homework pdf : (https://drive.google.com/file/d/1jdZFTCmcKE4_UeSs03lIkpY_05CBpViO/view?usp=sharing)
+3. Homework pdf : [Homework](https://drive.google.com/file/d/1jdZFTCmcKE4_UeSs03lIkpY_05CBpViO/view?usp=sharing)
 
 ---
 
@@ -281,4 +281,5 @@ Time complexity: `O(log n)`. Space complexity: `O(1)`.
    3. [Sqrt(x) (69)](https://leetcode.com/problems/sqrtx/)
    4. [First Bad Version (278)](https://leetcode.com/problems/first-bad-version/)
    5. [Guess Number Higher or Lower (374)](https://leetcode.com/problems/guess-number-higher-or-lower/)
-
+   
+4. Homework pdf : [Homework](https://drive.google.com/file/d/1kd2nRXax1Cv2mKwWD780RlBiGyIapUQM/view?usp=sharing)
