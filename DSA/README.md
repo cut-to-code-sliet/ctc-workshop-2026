@@ -6,6 +6,7 @@
 - [Session 1: C++ Basics, Memory, Operators & Conditionals (17 Sep 2026)](#session-1-c-basics-memory-operators--conditionals-17-sep-2026)
 - [Session 2: Switch Case, Bitwise Operators, Loops & Pattern Printing (18 Sep 2026)](#session-2-switch-case-bitwise-operators-loops--pattern-printing-18-sep-2026)
 - [Session 3: Arrays (1D & 2D), Break & Continue, STL Intro & Searching (19 Sep 2026)](#session-3-arrays-1d--2d-break--continue-stl-intro--searching-19-sep-2026)
+- [Session 4: Time & Space Complexity, Linear & Binary Search (20 Sep 2026)](#session-4-time--space-complexity-linear--binary-search-20-sep-2026)
 
 ---
 
@@ -155,3 +156,129 @@ Solved in class (Codeforces):
 1. Learn about the **range-based `for` loop** in C++ (syntax and when to use it).
 2. Take input from the user in a **2D array** and print each element.   
 3. Homework pdf : (https://drive.google.com/file/d/1jdZFTCmcKE4_UeSs03lIkpY_05CBpViO/view?usp=sharing)
+
+---
+
+## Session 4: Time & Space Complexity, Linear & Binary Search (20 Sep 2026)
+
+### Topics Covered
+- **Time complexity**: how the running time of an algorithm grows with input size `n`, not the actual seconds it takes
+- **Space complexity**: how much extra memory an algorithm uses as `n` grows
+- **Big-O notation**: common complexities such as `O(1)`, `O(log n)`, `O(n)`, `O(n log n)`, `O(n^2)`
+- **Linear search**: approach, pseudo code and implementation
+- **Binary search**: approach, pseudo code and implementation (works only on a **sorted** array)
+
+### Approach and Pseudo Code
+
+**Linear search**
+```
+for i from 0 to n-1:
+    if arr[i] == target:
+        return i
+return -1
+```
+
+**Binary search** (array must be sorted)
+```
+s = 0, e = n-1
+while s <= e:
+    mid = s + (e - s) / 2
+    if arr[mid] == target:
+        return mid
+    else if arr[mid] < target:
+        s = mid + 1        // target is in the right half
+    else:
+        e = mid - 1        // target is in the left half
+return -1
+```
+
+### Code
+
+**Linear search**
+```cpp
+#include <iostream>
+using namespace std;
+
+int linearSearch(int arr[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == target) {
+            return i;      // index where the target was found
+        }
+    }
+    return -1;             // target not present
+}
+
+int main() {
+    int arr[] = {4, 8, 15, 16, 23, 42};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int target = 16;
+
+    int idx = linearSearch(arr, n, target);
+    if (idx != -1) cout << "Found at index " << idx << endl;
+    else cout << "Not found" << endl;
+    return 0;
+}
+```
+Time complexity: `O(n)`. Space complexity: `O(1)`.
+
+**Binary search (iterative)**
+```cpp
+#include <iostream>
+using namespace std;
+
+int binarySearch(int arr[], int n, int target) {
+    int s = 0, e = n - 1;
+    while (s <= e) {
+        int mid = s + (e - s) / 2;   // safe way to find mid (avoids overflow)
+        if (arr[mid] == target) {
+            return mid;
+        } else if (arr[mid] < target) {
+            s = mid + 1;
+        } else {
+            e = mid - 1;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    int arr[] = {4, 8, 15, 16, 23, 42};   // must be sorted
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int target = 23;
+
+    int idx = binarySearch(arr, n, target);
+    if (idx != -1) cout << "Found at index " << idx << endl;
+    else cout << "Not found" << endl;
+    return 0;
+}
+```
+Time complexity: `O(log n)`. Space complexity: `O(1)`.
+
+### Resources
+- **Time and space complexity**
+  - [Analysis of Algorithms (Big-O) – GeeksforGeeks](https://www.geeksforgeeks.org/dsa/analysis-of-algorithms-big-o-analysis/)
+  - [Time Complexity and Space Complexity – GeeksforGeeks](https://www.geeksforgeeks.org/dsa/time-complexity-and-space-complexity/)
+- **Searching**
+  - [Linear Search Algorithm – GeeksforGeeks](https://www.geeksforgeeks.org/linear-search/)
+  - [Binary Search Algorithm – GeeksforGeeks](https://www.geeksforgeeks.org/dsa/binary-search/)
+- **Sorting (for the homework)**
+  - [Bubble Sort – GeeksforGeeks](https://www.geeksforgeeks.org/dsa/bubble-sort-algorithm/)
+  - [Selection Sort – GeeksforGeeks](https://www.geeksforgeeks.org/dsa/selection-sort-algorithm-2/)
+  - [Insertion Sort – GeeksforGeeks](https://www.geeksforgeeks.org/dsa/insertion-sort-algorithm/)
+  - [Sorting Algorithms – takeUforward](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/) (Striver A2Z sheet, Sorting section)
+
+### Homework
+1. **Think and research:** In binary search, why do we calculate `mid` as `s + (e - s) / 2` instead of `(s + e) / 2`? (Hint: think about what happens when `s` and `e` are very large integers.)
+2. **Learn all 3 basic sorting algorithms:**
+   - Bubble sort
+   - Selection sort
+   - Insertion sort
+
+   For each one, understand the idea, dry run it on a small array, write the code, and note its time complexity.
+3. **Solve 5 binary search questions on LeetCode.** Suggested:
+   1. [Binary Search (704)](https://leetcode.com/problems/binary-search/)
+   2. [Search Insert Position (35)](https://leetcode.com/problems/search-insert-position/)
+   3. [Sqrt(x) (69)](https://leetcode.com/problems/sqrtx/)
+   4. [First Bad Version (278)](https://leetcode.com/problems/first-bad-version/)
+   5. [Guess Number Higher or Lower (374)](https://leetcode.com/problems/guess-number-higher-or-lower/)
+
