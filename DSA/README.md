@@ -1,4 +1,4 @@
-# CTC Workshop 2026
+# CTC DSA Workshop 2026
 
 *Click on the session name below to jump to that session.*
 

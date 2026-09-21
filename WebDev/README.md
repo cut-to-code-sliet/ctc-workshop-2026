@@ -1,3 +1,12 @@
+# CTC Web Development Workshop 2026
+
+*Click on the session name below to jump to that session.*
+
+## Table of Contents
+- [Session 1: Web Basics, Terminal Commands & HTML/CSS Intro (21 Sep 2026)](#session-1-web-basics-terminal-commands--htmlcss-intro-21-sep-2026)
+
+---
+
 ## Session 1: Web Basics, Terminal Commands & HTML/CSS Intro (21 Sep 2026)
 
 ### Topics Covered
