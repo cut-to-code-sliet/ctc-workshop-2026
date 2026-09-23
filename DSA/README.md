@@ -371,7 +371,20 @@ void selectionSort(vector<int>& arr) {
 ---
 
 ### Practice Questions
-- 10 simple LeetCode questions on arrays and vectors (given in class).
+10 easy LeetCode questions on arrays and vectors:
+1. [Two Sum](https://leetcode.com/problems/two-sum/)
+2. [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+3. [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
+4. [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+5. [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
+6. [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
+7. [Move Zeroes](https://leetcode.com/problems/move-zeroes/)
+8. [Single Number](https://leetcode.com/problems/single-number/)
+9. [Majority Element](https://leetcode.com/problems/majority-element/)
+10. [Plus One](https://leetcode.com/problems/plus-one/)
+
+---
+
 
 ### Homework
 1. Learn about **iterators** in vectors — how `begin()`, `end()`, and iterator-based traversal work, as an alternative to index-based access.
