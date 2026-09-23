@@ -8,9 +8,9 @@ Welcome! This repo documents everything covered across our 2-month workshop — 
 |-------|-------------|-------|
 | 🧮 [DSA / Competitive Programming](./DSA/README.md) | Data structures, algorithms, problem solving | [Go to notes →](./DSA/README.md) |
 | 🌐 [Web Development](./WebDev/README.md) | Frontend, backend, full-stack projects | [Go to notes →](./web-dev/README.md) |
-| 📱 [App Development](./app-dev/README.md) | Mobile app dev (Android/Flutter/React Native) | [Go to notes →](./app-dev/README.md) |
-| 🤖 [AI/ML](./aiml/README.md) | Machine learning, deep learning, AI tools | [Go to notes →](./aiml/README.md) |
-| 🔒 [Cyber Security](./cybersec/README.md) | Security fundamentals, ethical hacking basics | [Go to notes →](./cybersec/README.md) |
+| 📱 [App Development](./AppDev/README.md) | Mobile app dev (Android/Flutter/React Native) | [Go to notes →](./app-dev/README.md) |
+| 🤖 [AI/ML](./AIML/README.md) | Machine learning, deep learning, AI tools | [Go to notes →](./aiml/README.md) |
+| 🔒 [Cyber Security](./CyberSecurity/README.md) | Security fundamentals, ethical hacking basics | [Go to notes →](./cybersec/README.md) |
 
 ---
 
