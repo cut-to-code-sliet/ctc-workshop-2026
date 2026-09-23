@@ -7,6 +7,8 @@
 - [Session 2: Switch Case, Bitwise Operators, Loops & Pattern Printing (18 Sep 2026)](#session-2-switch-case-bitwise-operators-loops--pattern-printing-18-sep-2026)
 - [Session 3: Arrays (1D & 2D), Break & Continue, STL Intro & Searching (19 Sep 2026)](#session-3-arrays-1d--2d-break--continue-stl-intro--searching-19-sep-2026)
 - [Session 4: Time & Space Complexity, Linear & Binary Search (20 Sep 2026)](#session-4-time--space-complexity-linear--binary-search-20-sep-2026)
+- [Session 5: Contest Review, Vectors & Selection Sort (23 Sep 2026)]
+(#session-5-contest-review-vectors--selection-sort-23-sep-2026)
 
 ---
 
@@ -283,3 +285,97 @@ Time complexity: `O(log n)`. Space complexity: `O(1)`.
    5. [Guess Number Higher or Lower (374)](https://leetcode.com/problems/guess-number-higher-or-lower/)
    
 4. Homework pdf : [Homework](https://drive.google.com/file/d/1kd2nRXax1Cv2mKwWD780RlBiGyIapUQM/view?usp=sharing)
+
+---
+
+## Session 5: Contest Review, Vectors & Selection Sort (23 Sep 2026)
+
+### Topics Covered
+
+#### 1. Contest Problem Review
+Solved and explained two problems from Codeforces:
+- [Problem A](https://codeforces.com/contest/2266/problem/A)
+- [Problem B](https://codeforces.com/contest/2266/problem/B)
+
+#### 2. Vectors in C++
+- **What is a vector?** A dynamic array from the STL — unlike a plain array, it can grow or shrink in size at runtime.
+- **Declaring a vector**
+```cpp
+  vector<int> v;                  // empty vector of ints
+  vector<int> v(5);               // vector of size 5, all elements 0
+  vector<int> v(5, 10);           // vector of size 5, all elements 10
+  vector<int> v = {1, 2, 3, 4};   // vector initialized with values
+```
+- **`push_back`** — adds an element to the end.
+```cpp
+  v.push_back(10);
+```
+- **`pop_back`** — removes the last element.
+```cpp
+  v.pop_back();
+```
+- **`size()` vs `capacity()`**
+  - `size()` → number of elements currently stored in the vector.
+  - `capacity()` → how many elements the vector *can* hold in its currently allocated memory before it needs to reallocate. Capacity is often larger than size (the vector over-allocates to avoid resizing on every single push, typically doubling when it runs out of room).
+```cpp
+  vector<int> v;
+  v.push_back(1);
+  v.push_back(2);
+  cout << v.size();      // 2
+  cout << v.capacity();  // could be 2, 4, etc. — implementation-defined
+```
+- **Range-based for loop with vectors**
+```cpp
+  for (int x : v) {
+      cout << x << " ";
+  }
+```
+  This works cleanly on vectors (unlike raw arrays passed into functions) because a `vector` always knows its own `begin()`/`end()` regardless of scope — it doesn't rely on compile-time size info the way a raw C-style array does.
+
+#### 3. Selection Sort
+**Idea:** Repeatedly find the minimum element from the unsorted part of the array and swap it into its correct position at the front.
+
+```cpp
+void selectionSort(vector<int>& arr) {
+    int n = arr.size();
+    for (int i = 0; i < n - 1; i++) {
+        int minIdx = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIdx]) {
+                minIdx = j;
+            }
+        }
+        swap(arr[i], arr[minIdx]);
+    }
+}
+```
+- **Time complexity:** O(n²) in all cases (best, average, worst) — it always scans the remaining unsorted portion fully to find the minimum, regardless of input order.
+- **Space complexity:** O(1) — sorts in place, no extra array needed.
+
+---
+
+### Resources
+- **Vectors**
+  - [`std::vector` reference (cppreference)](https://en.cppreference.com/w/cpp/container/vector)
+  - [Vector `push_back` (cppreference)](https://en.cppreference.com/w/cpp/container/vector/push_back)
+  - [Vector `pop_back` (cppreference)](https://en.cppreference.com/w/cpp/container/vector/pop_back)
+  - [Vector `size` (cppreference)](https://en.cppreference.com/w/cpp/container/vector/size)
+  - [Vector `capacity` (cppreference)](https://en.cppreference.com/w/cpp/container/vector/capacity)
+- **Iterators**
+  - [Iterator library overview (cppreference)](https://en.cppreference.com/w/cpp/iterator)
+  - [Vector `begin`/`end` (cppreference)](https://en.cppreference.com/w/cpp/container/vector/begin)
+- **Sorting Algorithms**
+  - [Selection Sort (GeeksforGeeks)](https://www.geeksforgeeks.org/dsa/selection-sort-algorithm-2/)
+  - [Insertion Sort (GeeksforGeeks)](https://www.geeksforgeeks.org/dsa/insertion-sort-algorithm/)
+  - [Bubble Sort (GeeksforGeeks)](https://www.geeksforgeeks.org/dsa/bubble-sort-algorithm/)
+
+---
+
+### Practice Questions
+- 10 simple LeetCode questions on arrays and vectors (given in class).
+
+### Homework
+1. Learn about **iterators** in vectors — how `begin()`, `end()`, and iterator-based traversal work, as an alternative to index-based access.
+2. Read the vector docs in detail — go through **every property and method** of `std::vector` (not just the ones covered today), using the cppreference link above.
+3. Solve the 10 LeetCode array/vector questions given in class.
+4. Study **insertion sort** and **bubble sort**, and practice writing their code from scratch.
