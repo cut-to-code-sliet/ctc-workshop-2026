@@ -3,11 +3,11 @@
 *Click on the session name below to jump to that session.*
 
 ## Table of Contents
-- [Session 1: Cybersecurity Basics, Hackers, Attacks & Nmap Intro(21 Sep 2026)](#session-1-cybersecurity-basics-hackers-attacks--nmap-intro-21-sep-2026)
+- [Session 1: Cybersecurity Basics, Hackers, Attacks & Nmap Intro(25 Sep 2026)](#session-1-cybersecurity-basics-hackers-attacks--nmap-intro-25-sep-2026)
 
 ---
 
-## Session 1: Cybersecurity Basics, Hackers, Attacks & Nmap Intro
+## Session 1: Cybersecurity Basics, Hackers, Attacks & Nmap Intro (25 Sep 2026)
 
 ### Topics Covered
 
