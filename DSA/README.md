@@ -395,7 +395,11 @@ void selectionSort(vector<int>& arr) {
 
 ---
 
-## Session 6: Functions, Call Stack, Call by value vs Reference (26 Sep 2026)
+- [Session 6: Functions, Call Stack, Call by Value vs Reference (26 Sep 2026)](#session-6-functions-call-stack-call-by-value-vs-reference-26-sep-2026)
+
+---
+
+## Session 6: Functions, Call Stack, Call by Value vs Reference (26 Sep 2026)
 
 ### Topics Covered
 
@@ -410,3 +414,85 @@ Started the session by going over three Codeforces problems:
 - **How a function loads onto the call stack**: when a function is called, a new **stack frame** is pushed containing its local variables, parameters and the return address (where to go back to).
 - Until a function **returns**, the function that called it is paused/blocked — it cannot move ahead until control comes back.
 - **Return type** of a function decides what kind of value is sent back to the caller (`int`, `float`, `void`, etc.), and `return` is the keyword used to send that value back.
+
+```
+main() calls swap() ──▶  swap() pushed onto stack, runs
+main() waits          ◀──  swap() returns, popped off stack, main() resumes
+```
+
+#### 3. Call by Value vs Call by Reference
+
+**❌ Wrong: `swap()` using Call by Value (doesn't actually swap `a` and `b`)**
+```cpp
+#include <iostream>
+using namespace std;
+
+void swap(int a, int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int x = 5, y = 10;
+    swap(x, y);
+    cout << "x = " << x << ", y = " << y << endl; // Output: x = 5, y = 10 (unchanged!)
+    return 0;
+}
+```
+**Why it fails:** Call by value copies `x` and `y` into `a` and `b`. The function swaps its own local copies, but `x` and `y` in `main()` are never touched.
+
+**✅ Fixed: `swap()` using Call by Reference**
+```cpp
+#include <iostream>
+using namespace std;
+
+void swap(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int x = 5, y = 10;
+    swap(x, y);
+    cout << "x = " << x << ", y = " << y << endl; // Output: x = 10, y = 5 (swapped!)
+    return 0;
+}
+```
+**Why it works:** The `&` makes `a` and `b` **aliases** for `x` and `y` themselves — no copies are made, so changes inside the function directly affect the caller's variables.
+
+---
+
+### Resources
+- [Functions in C++ (GeeksforGeeks)](https://www.geeksforgeeks.org/cpp/functions-in-cpp/)
+- [Call by Value vs Call by Reference (GeeksforGeeks)](https://www.geeksforgeeks.org/cpp/parameter-passing-techniques-in-cpp/)
+- [Understanding the Call Stack (freeCodeCamp)](https://www.freecodecamp.org/news/how-recursion-works-explained-with-flowcharts-and-a-video-de61f40cb7f9/)
+
+---
+
+### Practice Questions — Classic Function-Based Problems
+1. Write a function to find the **factorial** of a number.
+2. Write a function to check if a number is **prime**.
+3. Write a function to find the **GCD** of two numbers.
+4. Write a function to find the **LCM** of two numbers.
+5. Write a function to check if a number is a **palindrome**.
+6. Write a function to check if a number is an **Armstrong number**.
+7. Write a function to reverse a number using a function.
+8. Write a function to find the **sum of digits** of a number.
+9. Write a function to count the number of digits in a number.
+10. Write a function to check if a number is a **perfect number**.
+11. Write a function to compute **power(base, exponent)** without using `pow()`.
+12. Write a function to check if a year is a **leap year**.
+13. Write a function to find the **maximum of three numbers**.
+14. Write a function to swap two numbers **without a temporary variable**.
+15. Write a function that returns the **nth Fibonacci number**.
+16. Write a function to check if a number is **even or odd**.
+17. Write a function to find the **sum of an array** using a function.
+18. Write a function to find the **maximum element in an array** using a function.
+19. Write a recursive function to compute factorial (preview of next session's topic: recursion).
+20. Write a function to check if a string is a palindrome (by passing the string as a parameter).
+
+### Homework
+1. Solve all 20 practice questions above and submit your `.cpp` file.
+2. Try rewriting Q11 (power function) and Q19 (factorial) **recursively**, and note the difference in stack behavior compared to the loop-based version.
