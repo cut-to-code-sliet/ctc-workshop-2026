@@ -8,6 +8,7 @@
 - [Session 3: Arrays (1D & 2D), Break & Continue, STL Intro & Searching (19 Sep 2026)](#session-3-arrays-1d--2d-break--continue-stl-intro--searching-19-sep-2026)
 - [Session 4: Time & Space Complexity, Linear & Binary Search (20 Sep 2026)](#session-4-time--space-complexity-linear--binary-search-20-sep-2026)
 - [Session 5: Contest Review, Vectors & Selection Sort (23 Sep 2026)](#session-5-contest-review-vectors--selection-sort-23-sep-2026)
+- [Session 6: Functions, Call Stack, Call by Value vs Reference (26 Sep 2026)](#session-6-functions-call-stack-call-by-value-vs-reference-26-sep-2026)
 
 ---
 
@@ -391,3 +392,21 @@ void selectionSort(vector<int>& arr) {
 2. Read the vector docs in detail — go through **every property and method** of `std::vector` (not just the ones covered today), using the cppreference link above.
 3. Solve the 10 LeetCode array/vector questions given in class.
 4. Study **insertion sort** and **bubble sort**, and practice writing their code from scratch.
+
+---
+
+## Session 6: Functions, Call Stack, Call by Value vs Reference (26 Sep 2026)
+
+### Topics Covered
+
+#### 1. Contest Review
+Started the session by going over three Codeforces problems:
+- [Problem 2263B](https://codeforces.com/contest/2263/problem/B)
+- [Problem 2264A](https://codeforces.com/contest/2264/problem/A)
+- [Problem 2259D](https://codeforces.com/contest/2259/problem/D)
+
+#### 2. Introduction to Functions
+- What a **function** is and why we break code into functions (reusability, readability).
+- **How a function loads onto the call stack**: when a function is called, a new **stack frame** is pushed containing its local variables, parameters and the return address (where to go back to).
+- Until a function **returns**, the function that called it is paused/blocked — it cannot move ahead until control comes back.
+- **Return type** of a function decides what kind of value is sent back to the caller (`int`, `float`, `void`, etc.), and `return` is the keyword used to send that value back.
