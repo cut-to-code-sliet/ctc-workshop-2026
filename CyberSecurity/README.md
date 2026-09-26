@@ -3,7 +3,7 @@
 *Click on the session name below to jump to that session.*
 
 ## Table of Contents
-- [Session 1: Cybersecurity Basics, Hackers, Attacks & Nmap Intro](#session-1-cybersecurity-basics-hackers-attacks--nmap-intro)
+- [Session 1: Cybersecurity Basics, Hackers, Attacks & Nmap Intro(21 Sep 2026)](#session-1-cybersecurity-basics-hackers-attacks--nmap-intro-21-sep-2026)
 
 ---
 
