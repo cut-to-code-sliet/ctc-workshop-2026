@@ -395,7 +395,7 @@ void selectionSort(vector<int>& arr) {
 
 ---
 
-## Session 6: Functions, Call Stack, Call by Value vs Reference (26 Sep 2026)
+## Session 6: Functions, Call Stack, Call by value vs Reference (26 Sep 2026)
 
 ### Topics Covered
 
