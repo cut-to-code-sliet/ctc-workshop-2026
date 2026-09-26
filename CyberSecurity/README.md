@@ -1,3 +1,41 @@
+# CTC Cyber Security Workshop 2026
+
+*Click on the session name below to jump to that session.*
+
+## Table of Contents
+- [Session 1: Cybersecurity Basics, Hackers, Attacks & Nmap Intro](#session-1-cybersecurity-basics-hackers-attacks--nmap-intro)
+
+---
+
+## Session 1: Cybersecurity Basics, Hackers, Attacks & Nmap Intro
+
+### Topics Covered
+
+#### 1. What is Cybersecurity?
+Cybersecurity is the practice of protecting systems, networks, applications and data from digital attacks. The goal is usually summed up by the **CIA Triad**:
+
+| Principle | Meaning |
+|-----------|---------|
+| **Confidentiality** | Only authorized people can access the data |
+| **Integrity** | Data is accurate and not tampered with |
+| **Availability** | Systems and data are accessible when needed |
+
+#### 2. Different Types of Hackers
+
+| Type | Also called | What they do |
+|------|-------------|---------------|
+| **White Hat** | Ethical hacker | Hacks legally, with permission, to find and fix vulnerabilities |
+| **Black Hat** | Malicious hacker | Hacks illegally for personal gain, damage or theft |
+| **Grey Hat** | — | Hacks without permission but without malicious intent (e.g. reports the flaw afterwards) |
+| **Script Kiddie** | — | Uses existing tools/scripts without deep technical knowledge |
+| **Hacktivist** | — | Hacks to promote a political or social cause |
+| **State-Sponsored** | — | Works for a government to spy on or attack other nations |
+
+#### 3. Blue Team vs Red Team
+
+```
+Red Team  ──attacks──▶  System/Network  ◀──defends──  Blue Team
+```
 
 - **Red Team**: the "attackers." They simulate real-world attacks to find weaknesses (offensive security, penetration testing).
 - **Blue Team**: the "defenders." They monitor, detect and respond to attacks (security operations, incident response).
