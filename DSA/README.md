@@ -9,7 +9,7 @@
 - [Session 4: Time & Space Complexity, Linear & Binary Search (20 Sep 2026)](#session-4-time--space-complexity-linear--binary-search-20-sep-2026)
 - [Session 5: Contest Review, Vectors & Selection Sort (23 Sep 2026)](#session-5-contest-review-vectors--selection-sort-23-sep-2026)
 - [Session 6: Functions, Call Stack, Call by Value vs Reference (26 Sep 2026)](#session-6-functions-call-stack-call-by-value-vs-reference-26-sep-2026)
-
+- [Session 7: Selection Sort & Bubble Sort (29 Sep 2026)](#session-7-selection-sort--bubble-sort-29-sep-2026)
 ---
 
 ## Session 1: C++ Basics, Memory, Operators & Conditionals (17 Sep 2026)
@@ -496,3 +496,125 @@ int main() {
 ### Homework
 1. Solve all 20 practice questions above and submit your `.cpp` file.
 2. Try rewriting Q11 (power function) and Q19 (factorial) **recursively**, and note the difference in stack behavior compared to the loop-based version.
+---
+- [Session 7: Selection Sort & Bubble Sort (29 Sep 2026)](#session-7-selection-sort--bubble-sort-29-sep-2026)
+---
+## Session 7: Selection Sort & Bubble Sort (29 Sep 2026)
+
+---
+
+## Session 7: Selection Sort & Bubble Sort (29 Sep 2026)
+
+### Topics Covered
+
+#### 1. Why Sorting?
+- **Sorting** means arranging elements in a particular order (ascending or descending).
+- Sorted data makes other operations faster. For example, **binary search** only works on a sorted array.
+- **In-place sorting:** sorts using only `O(1)` extra space. Both algorithms today are in-place.
+- **Stable sorting:** equal elements keep their original relative order.
+
+#### 2. Selection Sort
+**Idea:** Repeatedly find the **minimum** element in the unsorted part and swap it into its correct position at the front.
+
+**Dry run** on `[64, 25, 12, 22, 11]`:
+```
+Pass 1: min = 11  → swap with 64 → [11, 25, 12, 22, 64]
+Pass 2: min = 12  → swap with 25 → [11, 12, 25, 22, 64]
+Pass 3: min = 22  → swap with 25 → [11, 12, 22, 25, 64]
+Pass 4: min = 25  → already in place → [11, 12, 22, 25, 64]
+```
+
+```cpp
+void selectionSort(vector<int>& arr) {
+    int n = arr.size();
+    for (int i = 0; i < n - 1; i++) {
+        int minIdx = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIdx]) {
+                minIdx = j;
+            }
+        }
+        swap(arr[i], arr[minIdx]);
+    }
+}
+```
+- **Time complexity:** `O(n²)` in best, average and worst case, because it always scans the whole unsorted part.
+- **Space complexity:** `O(1)`.
+- **Stable?** No. The long-distance swap can change the order of equal elements.
+- **Number of swaps:** at most `n - 1`, which is very few.
+
+#### 3. Bubble Sort
+**Idea:** Repeatedly compare **adjacent** elements and swap them if they are in the wrong order. After each pass, the largest remaining element "bubbles up" to its correct position at the end.
+
+**Dry run** on `[5, 1, 4, 2, 8]`:
+```
+Pass 1: (5,1) swap → (5,4) swap → (5,2) swap → (5,8) no swap → [1, 4, 2, 5, 8]
+Pass 2: (1,4) no    → (4,2) swap → (4,5) no                   → [1, 2, 4, 5, 8]
+Pass 3: no swaps happened → array is sorted, stop early
+```
+
+```cpp
+void bubbleSort(vector<int>& arr) {
+    int n = arr.size();
+    for (int i = 0; i < n - 1; i++) {
+        bool swapped = false;
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]);
+                swapped = true;
+            }
+        }
+        if (!swapped) break;   // already sorted, no need to continue
+    }
+}
+```
+- **Time complexity:** `O(n²)` in the average and worst case, and `O(n)` in the best case (already sorted, thanks to the `swapped` flag).
+- **Space complexity:** `O(1)`.
+- **Stable?** Yes, because it only swaps when `arr[j] > arr[j + 1]` (strictly greater).
+
+#### 4. Quick Comparison
+
+| Feature | Selection Sort | Bubble Sort |
+|---|---|---|
+| Core idea | Pick the minimum, place it at the front | Swap adjacent out-of-order pairs |
+| Best case | `O(n²)` | `O(n)` (with the `swapped` flag) |
+| Average / Worst | `O(n²)` | `O(n²)` |
+| Space | `O(1)` | `O(1)` |
+| Stable | No | Yes |
+| Swaps | At most `n - 1` | Up to `O(n²)` |
+
+---
+
+### Resources
+- **Selection Sort**
+  - [Selection Sort (GeeksforGeeks)](https://www.geeksforgeeks.org/dsa/selection-sort-algorithm-2/)
+- **Bubble Sort**
+  - [Bubble Sort (GeeksforGeeks)](https://www.geeksforgeeks.org/dsa/bubble-sort-algorithm/)
+- **Sorting practice**
+  - [Sorting Algorithms – takeUforward](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/) (Striver A2Z sheet, Sorting section)
+
+---
+
+### Practice Questions
+1. Dry run selection sort on `[29, 10, 14, 37, 13]` and write the array after every pass.
+2. Dry run bubble sort on `[6, 3, 8, 2, 9]` and write the array after every pass.
+3. Write selection sort to sort an array in **descending** order.
+4. Write bubble sort to sort an array in **descending** order.
+5. How many comparisons does selection sort make for an array of size `n`? Does it change if the array is already sorted?
+6. Why does the `swapped` flag make bubble sort `O(n)` on an already sorted array?
+7. Count the total number of swaps bubble sort makes on a given array.
+
+### Homework
+1. Write **selection sort** and **bubble sort** from scratch (without looking at the notes) and submit your `.cpp` file.
+2. Take input of `n` numbers from the user, sort them using bubble sort, and print the sorted array.
+3. Modify selection sort to find the **k-th smallest element** of an array without fully sorting it.
+4. Sort an array of strings (or characters) alphabetically using selection sort.
+5. Print the array after **every pass** of both algorithms to see how they differ internally.
+6. Solve these on LeetCode:
+   1. [Sort Colors (75)](https://leetcode.com/problems/sort-colors/)
+   2. [Squares of a Sorted Array (977)](https://leetcode.com/problems/squares-of-a-sorted-array/)
+   3. [Height Checker (1051)](https://leetcode.com/problems/height-checker/)
+7. **Theory:**
+   1. Which of the two algorithms is stable, and why? Give a small example with duplicate values.
+   2. When would you prefer selection sort over bubble sort (hint: think about the number of swaps)?
+   3. Finish the pending homework from Session 5: **insertion sort**, and compare all three sorting algorithms in a table.
