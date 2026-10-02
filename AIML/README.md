@@ -118,7 +118,7 @@ An **ordered**, **immutable** collection that allows duplicates. Used for fixed 
 
 ```python
 t = (1, 2, 3)
-single = (5,)              # a single-element tuple needs the comma
+single = (5,)              # a single-element tuple needs the comma(,)
 print(t[0], t[-1], t[0:2])
 print(t.count(2), t.index(3))
 

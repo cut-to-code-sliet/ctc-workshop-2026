@@ -497,14 +497,8 @@ int main() {
 1. Solve all 20 practice questions above and submit your `.cpp` file.
 2. Try rewriting Q11 (power function) and Q19 (factorial) **recursively**, and note the difference in stack behavior compared to the loop-based version.
 ---
-- [Session 7: Selection Sort & Bubble Sort (29 Sep 2026)](#session-7-selection-sort--bubble-sort-29-sep-2026)
----
 ## Session 7: Selection Sort & Bubble Sort (29 Sep 2026)
-
 ---
-
-## Session 7: Selection Sort & Bubble Sort (29 Sep 2026)
-
 ### Topics Covered
 
 #### 1. Why Sorting?
