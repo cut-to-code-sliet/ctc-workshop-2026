@@ -10,6 +10,7 @@
 - [Session 5: Contest Review, Vectors & Selection Sort (23 Sep 2026)](#session-5-contest-review-vectors--selection-sort-23-sep-2026)
 - [Session 6: Functions, Call Stack, Call by Value vs Reference (26 Sep 2026)](#session-6-functions-call-stack-call-by-value-vs-reference-26-sep-2026)
 - [Session 7: Selection Sort & Bubble Sort (29 Sep 2026)](#session-7-selection-sort--bubble-sort-29-sep-2026)
+- [Session 8: OOPs Basics, Procedural vs OOP, Class & Object, Constructors (05 Oct 2026)](#session-8-oops-basics-procedural-vs-oop-class--object-constructors-05-oct-2026)
 ---
 
 ## Session 1: C++ Basics, Memory, Operators & Conditionals (17 Sep 2026)
