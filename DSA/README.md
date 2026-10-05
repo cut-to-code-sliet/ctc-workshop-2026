@@ -612,3 +612,355 @@ void bubbleSort(vector<int>& arr) {
    1. Which of the two algorithms is stable, and why? Give a small example with duplicate values.
    2. When would you prefer selection sort over bubble sort (hint: think about the number of swaps)?
    3. Finish the pending homework from Session 5: **insertion sort**, and compare all three sorting algorithms in a table.
+
+
+   ---
+---
+
+## Session 8: OOPs Basics, Procedural vs OOP, Class & Object, Constructors (05 Oct 2026)
+
+### Topics Covered
+
+#### 1. Introduction to OOPs
+- **What is OOP?** Object-Oriented Programming is a way of writing programs by organizing code around **objects**, which bundle **data** (variables) and the **functions** that work on that data into a single unit.
+- **Why OOP?**
+  - **Real-world modelling** — a `Student`, `Car` or `BankAccount` in real life maps directly to a class in code.
+  - **Reusability** — write a class once, create as many objects as needed (and reuse it through inheritance).
+  - **Data security** — data can be hidden from outside code using access specifiers.
+  - **Maintainability** — code is split into small independent units, so it is easier to read, debug and extend.
+  - **Scalability** — large projects stay manageable.
+- **Four pillars of OOP** (brief idea; each will be covered in detail later):
+
+| Pillar | One-line idea |
+|---|---|
+| **Encapsulation** | Wrapping data and functions together in a class and restricting direct access to the data |
+| **Abstraction** | Showing only the necessary details and hiding the internal working |
+| **Inheritance** | A class acquiring the properties and behaviour of another class |
+| **Polymorphism** | One name, many forms (same function name behaving differently) |
+
+#### 2. Procedural vs Object-Oriented Programming
+- **Procedural programming** (e.g. C) — the program is a **sequence of functions**. Data and functions are separate, and data is usually shared openly between functions.
+- **Object-oriented programming** (e.g. C++, Java) — the program is a **collection of objects**. Data and functions live together inside the object.
+
+**Same problem, both styles (bank account deposit):**
+```cpp
+// Procedural: data and function are separate
+#include <iostream>
+using namespace std;
+
+void deposit(int &balance, int amount) {
+    balance += amount;
+}
+
+int main() {
+    int balance = 1000;
+    deposit(balance, 500);
+    balance = -99999;                 // anyone can modify the data directly!
+    cout << balance << endl;
+    return 0;
+}
+```
+```cpp
+// OOP: data and function are bundled, data is protected
+#include <iostream>
+using namespace std;
+
+class BankAccount {
+private:
+    int balance;                      // hidden from outside
+public:
+    BankAccount(int b) { balance = b; }
+    void deposit(int amount) {
+        if (amount > 0) balance += amount;
+    }
+    int getBalance() { return balance; }
+};
+
+int main() {
+    BankAccount acc(1000);
+    acc.deposit(500);
+    // acc.balance = -99999;          // ERROR: balance is private
+    cout << acc.getBalance() << endl; // 1500
+    return 0;
+}
+```
+
+| Feature | Procedural | OOP |
+|---|---|---|
+| Focus | Functions / steps | Objects / data |
+| Approach | Top-down | Bottom-up |
+| Data security | Weak, data is mostly global or shared | Strong, via access specifiers |
+| Code reuse | Limited (functions) | High (classes, inheritance) |
+| Real-world mapping | Hard | Natural |
+| Best for | Small, simple programs | Large, complex programs |
+| Examples | C, Pascal | C++, Java, Python |
+
+#### 3. Class and Object
+- **Class** — a **blueprint / template** that defines what data (data members) and behaviour (member functions) something will have. A class itself does **not take memory** for its data until an object is created.
+- **Object** — a **real instance** of a class. Each object has its own copy of the data members and occupies memory.
+- **Access specifiers**
+  - `public` — accessible from anywhere.
+  - `private` — accessible only inside the class (**default** for a `class`).
+  - `protected` — accessible inside the class and its derived classes (used with inheritance).
+- **Dot operator (`.`)** accesses members through an object; the **arrow operator (`->`)** accesses them through a pointer to an object.
+- **Getters and setters** — public functions used to safely read or change private data.
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+private:
+    int age;                          // private data member
+
+public:
+    string name;                      // public data member
+
+    // setter
+    void setAge(int a) {
+        if (a > 0) age = a;
+    }
+    // getter
+    int getAge() {
+        return age;
+    }
+    // member function
+    void display() {
+        cout << "Name: " << name << ", Age: " << age << endl;
+    }
+};
+
+int main() {
+    Student s1;                       // object creation
+    s1.name = "Aman";
+    s1.setAge(20);
+    s1.display();                     // Name: Aman, Age: 20
+
+    Student s2;
+    s2.name = "Riya";
+    s2.setAge(21);
+    s2.display();                     // Name: Riya, Age: 21
+
+    Student* p = new Student();       // object created on the heap
+    p->name = "Karan";
+    p->setAge(19);
+    p->display();                     // Name: Karan, Age: 19
+    delete p;                         // free heap memory
+
+    return 0;
+}
+```
+- `s1` and `s2` are two separate objects of the same class, and each has its own `name` and `age`.
+- A `struct` in C++ is almost the same as a `class`, but its members are **public by default**.
+
+#### 4. Methods (Member Functions)
+- A **method** (member function) is a function **defined inside a class** that works on the data of that class. It describes the **behaviour** of an object, just like data members describe its **state**.
+- It is called through an object using the dot operator: `obj.method()`. Inside the method, the object's data members can be used directly.
+- A method can take parameters and can return a value (or `void`), just like a normal function.
+
+**Ways to define a method:**
+1. **Inside the class** — written fully within the class body (the compiler treats it as `inline`, so this suits short functions).
+2. **Outside the class** — only the **declaration** is inside the class, and the body is written outside using the **scope resolution operator (`::`)**. This keeps large classes clean and readable.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Rectangle {
+private:
+    int length, breadth;
+
+public:
+    // 1. Defined inside the class
+    void setValues(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+
+    // 2. Declared here, defined outside the class
+    int area();
+    int perimeter() const;            // const method: promises not to modify the object
+};
+
+// Definition outside the class using ::
+int Rectangle::area() {
+    return length * breadth;
+}
+
+int Rectangle::perimeter() const {
+    return 2 * (length + breadth);
+}
+
+int main() {
+    Rectangle r;
+    r.setValues(5, 3);
+    cout << "Area: " << r.area() << endl;            // Area: 15
+    cout << "Perimeter: " << r.perimeter() << endl;  // Perimeter: 16
+    return 0;
+}
+```
+
+**Types of methods (by purpose):**
+- **Getter / accessor** — returns the value of a private data member (`getAge()`).
+- **Setter / mutator** — changes a private data member safely, with validation (`setAge()`).
+- **Utility / behaviour methods** — perform an action using the object's data (`area()`, `deposit()`, `display()`).
+
+**Important points:**
+- A method that does **not modify** the object should be marked **`const`** (`int perimeter() const`). A `const` object can call only `const` methods.
+- Methods can be **overloaded**: the same name with different parameters (e.g. `add(int, int)` and `add(double, double)`).
+- A method can call other methods of the same class directly.
+- **Method vs function:** a normal function stands alone, while a method belongs to a class and needs an object to be called (except `static` methods, which belong to the class itself).
+
+```cpp
+class Calculator {
+public:
+    int add(int a, int b)             { return a + b; }
+    double add(double a, double b)    { return a + b; }    // method overloading
+    int add(int a, int b, int c)      { return a + b + c; }
+};
+
+int main() {
+    Calculator c;
+    cout << c.add(2, 3) << endl;          // 5
+    cout << c.add(2.5, 3.5) << endl;      // 6
+    cout << c.add(1, 2, 3) << endl;       // 6
+    return 0;
+}
+```
+
+#### 5. Constructor
+- A **constructor** is a special member function that is **called automatically when an object is created**. It is used to **initialize** the data members.
+- Rules:
+  - Its name is the **same as the class name**.
+  - It has **no return type** (not even `void`).
+  - It is called automatically; you never call it manually.
+  - It can be **overloaded** (multiple constructors with different parameters).
+  - If you write no constructor, the compiler provides a **default constructor** (it does not initialize `int` or `float` members, so they hold garbage values).
+
+**Types of constructors:**
+1. **Default constructor** — takes no parameters.
+2. **Parameterized constructor** — takes parameters to initialize the object with given values.
+3. **Copy constructor** — creates a new object as a copy of an existing object.
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+public:
+    string name;
+    int age;
+
+    // 1. Default constructor
+    Student() {
+        name = "Unknown";
+        age = 0;
+        cout << "Default constructor called" << endl;
+    }
+
+    // 2. Parameterized constructor
+    Student(string name, int age) {
+        this->name = name;            // 'this' points to the current object
+        this->age = age;
+        cout << "Parameterized constructor called" << endl;
+    }
+
+    // 3. Copy constructor
+    Student(const Student &other) {
+        name = other.name;
+        age = other.age;
+        cout << "Copy constructor called" << endl;
+    }
+
+    // Destructor
+    ~Student() {
+        cout << "Destructor called for " << name << endl;
+    }
+
+    void display() {
+        cout << name << " " << age << endl;
+    }
+};
+
+int main() {
+    Student s1;                       // Default constructor called
+    Student s2("Aman", 20);           // Parameterized constructor called
+    Student s3(s2);                   // Copy constructor called
+    Student s4 = s2;                  // Copy constructor called
+
+    s1.display();                     // Unknown 0
+    s2.display();                     // Aman 20
+    s3.display();                     // Aman 20
+    s4.display();                     // Aman 20
+    return 0;
+}   // Destructors are called here, in reverse order: s4, s3, s2, s1
+```
+
+**Constructor initializer list** — a cleaner and more efficient way to initialize members (it is **required** for `const` members and reference members):
+```cpp
+class Point {
+    int x, y;
+public:
+    Point(int a, int b) : x(a), y(b) { }   // initializer list
+    void show() { cout << x << ", " << y << endl; }
+};
+```
+
+**`this` pointer** — an implicit pointer available inside every non-static member function that points to the object that called the function. It is mainly used to separate member names from parameter names (`this->age = age;`).
+
+**Destructor**
+- A special member function that is **called automatically when an object is destroyed** (goes out of scope or is deleted).
+- Name is `~ClassName()`, with no parameters and no return type, and a class can have **only one** destructor.
+- Used to free resources, such as heap memory allocated with `new`.
+- Objects are destroyed in the **reverse order** of their creation.
+
+**Shallow copy vs deep copy (brief idea):** if a class holds a pointer, the default copy constructor copies only the **address** (shallow copy), so both objects point to the same memory. To give each object its own memory, write your own copy constructor that allocates new memory (**deep copy**).
+
+---
+
+### Resources
+  - [OOPs Recource ](https://www.w3schools.com/cpp/cpp_oop.asp)
+---
+
+### Practice Questions
+1. Write a class `Rectangle` with `length` and `breadth`, and member functions to calculate the **area** and **perimeter**.
+2. Create a class `Student` with a default constructor and a parameterized constructor. Create one object using each and print both.
+3. Predict the output (and explain): how many times is each constructor and the destructor called?
+```cpp
+Student a;
+Student b("Aman", 20);
+Student c = b;
+```
+4. Why does the following code give an error? How can you fix it?
+```cpp
+class Test {
+    int x;
+};
+int main() {
+    Test t;
+    t.x = 10;
+}
+```
+5. Write a class `Car` with private data (`brand`, `price`) and public getters and setters. Don't allow a negative price.
+6. What is the difference between `class` and `struct` in C++?
+7. Write a class with a parameterized constructor using an **initializer list**.
+8. Write a program to show the use of the `this` pointer when the parameter name and the data member name are the same.
+9. Write a class `Circle` with a method `area()` defined **outside the class** using the scope resolution operator `::`.
+10. Write a class `Calculator` with an overloaded `add()` method for `int` and `double` arguments.
+11. What is the difference between a normal function and a member function? What does a `const` member function mean?
+
+### Homework
+1. Solve all 11 practice questions above and submit your `.cpp` file.
+2. Create a class `BankAccount` with `accountNumber`, `holderName` and `balance` (private), a **parameterized constructor**, and functions `deposit()`, `withdraw()` (don't allow overdraw) and `display()`.
+3. Create a class `Book` with `title`, `author` and `price`. Take the details of **5 books** from the user, store the objects in an **array (or vector)**, and print the details of the most expensive book.
+4. Add a **copy constructor** to the `Student` class and print a message inside it. Find out the situations in which the copy constructor gets called (pass by value, return by value, object initialization).
+5. Create a class `Counter` with a **static** data member that counts how many objects have been created. Learn how `static` members work first.
+6. **Theory:**
+   1. What are the four pillars of OOP? Explain each in one line.
+   2. What is the difference between procedural programming and OOP? Give an example.
+   3. Can a constructor be `private`? Can a constructor have a return type? Why or why not?
+   4. What is the difference between a shallow copy and a deep copy?
+   5. What happens if we don't write any constructor in a class?
+7. Read about the **`new` and `delete`** operators and **pointers to objects**, as preparation for the next OOP topics: inheritance and polymorphism.
