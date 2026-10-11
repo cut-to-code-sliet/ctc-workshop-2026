@@ -31,7 +31,7 @@
 - **Conditional statements** — `if`, `if-else`, `else-if` ladder
 
 ### Resources
-- [C++ Basic Syntax – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/cpp-programming-language/)
+- [C++ Basic Syntax – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/cpp-programming-intro/)
 - [Data Types in C++](https://www.geeksforgeeks.org/cpp/cpp-data-types/)
 - [Operators in C++](https://www.geeksforgeeks.org/cpp/operators-in-cpp/)
 - [ASCII Table Reference](https://www.asciitable.com/)
@@ -83,8 +83,8 @@ int main(){
   - Observe symmetry in some special patterns (optional)
 
 ### Resources
-- [Bitwise Operators in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/bitwise-operators-in-c-cpp/)
-- [Loops in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/loops-in-c-and-cpp/)
+- [Bitwise Operators – GeeksforGeeks](https://www.geeksforgeeks.org/c/bitwise-operators-in-c-cpp/)
+- [Loops in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/cpp-loops/)
 - [Pattern Printing Sheet – takeUforward](https://takeuforward.org/strivers-a2z-dsa-course/must-do-pattern-problems-before-starting-dsa)
 
 ### Practice Questions
@@ -112,7 +112,7 @@ int main(){
 9. Write a program to count the number of set bits (1s) in the binary representation of a number, without using any built-in function. — [Number of 1 Bits (LeetCode)](https://leetcode.com/problems/number-of-1-bits/)
 10. Write a program to check whether a given number is a power of 2 using bitwise operators. — [Power of Two (LeetCode)](https://leetcode.com/problems/power-of-two/)
 11. Write a program to swap two numbers using the XOR bitwise operator, without a third variable.
-12. Given an array where every element appears twice except one, find that one element using XOR. — [Single Number (LeetCode)](https://leetcode.com/problems/single-number/)	
+12. Given an array where every element appears twice except one, find that one element using XOR. — [Single Number (LeetCode)](https://leetcode.com/problems/single-number/)
 
 
 ---
@@ -135,21 +135,21 @@ int main(){
 - **Arrays (2D)**
   - [How to Create Array of Arrays (2D Arrays) in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/how-to-create-array-of-arrays-in-cpp)
 - **`break` and `continue`**
-  - [Break vs Continue Statement – GeeksforGeeks](https://geeksforgeeks.org/break-vs-continue-statement-in-programming)
-  - [continue Statement in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/continue-statement-cpp)
+  - [Break vs Continue Statement – GeeksforGeeks](https://www.geeksforgeeks.org/dsa/break-vs-continue-statement-in-programming/)
+  - [continue Statement in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/continue-statement-cpp/)
 - **STL (Standard Template Library)**
-  - [C++ STL Tutorial – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/cpp-stl-tutorial/)
-  - [C++ STL Cheat Sheet – GeeksforGeeks](https://www.geeksforgeeks.org/cpp-stl-cheat-sheet/)
+  - [C++ STL Tutorial – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/the-c-standard-template-library-stl/)
+  - [C++ Cheat Sheet – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/cpp-cheatsheet/)
 - **Linear search**
-  - [Linear Search Algorithm – GeeksforGeeks](https://www.geeksforgeeks.org/linear-search/)
+  - [Linear Search Algorithm – GeeksforGeeks](https://www.geeksforgeeks.org/dsa/linear-search/)
 - **Binary search**
-  - [std::binary_search() in C++ STL – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/binary-search-algorithms-the-c-standard-template-library-stl)
+  - [std::binary_search() in C++ STL – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/binary-search-algorithms-the-c-standard-template-library-stl/)
 - **Range-based `for` loop** (for the homework)
-  - [Range-Based for Loop in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/range-based-loop-c)
+  - [Range-Based for Loop in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/range-based-loop-c/)
 - **Pattern printing**
   - [Pattern Printing in Detail (YouTube)](https://youtu.be/tNm_NNSB3_w?si=XI-6pz2GJy1R0ICR) — for anyone who wants to learn pattern printing in more depth
 
-  ### Practice Questions
+### Practice Questions
 Solved in class (Codeforces):
 1. [Codeforces 2203A](https://codeforces.com/problemset/problem/2203/A)
 2. [Codeforces 2193A](https://codeforces.com/problemset/problem/2193/A)
@@ -157,7 +157,7 @@ Solved in class (Codeforces):
 
 ### Homework
 1. Learn about the **range-based `for` loop** in C++ (syntax and when to use it).
-2. Take input from the user in a **2D array** and print each element.   
+2. Take input from the user in a **2D array** and print each element.
 3. Homework pdf : [Homework](https://drive.google.com/file/d/1jdZFTCmcKE4_UeSs03lIkpY_05CBpViO/view?usp=sharing)
 
 ---
@@ -262,7 +262,7 @@ Time complexity: `O(log n)`. Space complexity: `O(1)`.
   - [Analysis of Algorithms (Big-O) – GeeksforGeeks](https://www.geeksforgeeks.org/dsa/analysis-of-algorithms-big-o-analysis/)
   - [Time Complexity and Space Complexity – GeeksforGeeks](https://www.geeksforgeeks.org/dsa/time-complexity-and-space-complexity/)
 - **Searching**
-  - [Linear Search Algorithm – GeeksforGeeks](https://www.geeksforgeeks.org/linear-search/)
+  - [Linear Search Algorithm – GeeksforGeeks](https://www.geeksforgeeks.org/dsa/linear-search/)
   - [Binary Search Algorithm – GeeksforGeeks](https://www.geeksforgeeks.org/dsa/binary-search/)
 - **Sorting (for the homework)**
   - [Bubble Sort – GeeksforGeeks](https://www.geeksforgeeks.org/dsa/bubble-sort-algorithm/)
@@ -284,7 +284,7 @@ Time complexity: `O(log n)`. Space complexity: `O(1)`.
    3. [Sqrt(x) (69)](https://leetcode.com/problems/sqrtx/)
    4. [First Bad Version (278)](https://leetcode.com/problems/first-bad-version/)
    5. [Guess Number Higher or Lower (374)](https://leetcode.com/problems/guess-number-higher-or-lower/)
-   
+
 4. Homework pdf : [Homework](https://drive.google.com/file/d/1kd2nRXax1Cv2mKwWD780RlBiGyIapUQM/view?usp=sharing)
 
 ---
@@ -357,12 +357,14 @@ void selectionSort(vector<int>& arr) {
 
 ### Resources
 - **Vectors**
+  - [Vector in C++ STL (GeeksforGeeks)](https://www.geeksforgeeks.org/cpp/vector-in-cpp-stl/)
   - [`std::vector` reference (cppreference)](https://en.cppreference.com/w/cpp/container/vector)
   - [Vector `push_back` (cppreference)](https://en.cppreference.com/w/cpp/container/vector/push_back)
   - [Vector `pop_back` (cppreference)](https://en.cppreference.com/w/cpp/container/vector/pop_back)
   - [Vector `size` (cppreference)](https://en.cppreference.com/w/cpp/container/vector/size)
   - [Vector `capacity` (cppreference)](https://en.cppreference.com/w/cpp/container/vector/capacity)
 - **Iterators**
+  - [Iterators in C++ STL (GeeksforGeeks)](https://www.geeksforgeeks.org/cpp/iterators-c-stl/)
   - [Iterator library overview (cppreference)](https://en.cppreference.com/w/cpp/iterator)
   - [Vector `begin`/`end` (cppreference)](https://en.cppreference.com/w/cpp/container/vector/begin)
 - **Sorting Algorithms**
@@ -393,10 +395,6 @@ void selectionSort(vector<int>& arr) {
 2. Read the vector docs in detail — go through **every property and method** of `std::vector` (not just the ones covered today), using the cppreference link above.
 3. Solve the 10 LeetCode array/vector questions given in class.
 4. Study **insertion sort** and **bubble sort**, and practice writing their code from scratch.
-
----
-
-- [Session 6: Functions, Call Stack, Call by Value vs Reference (26 Sep 2026)](#session-6-functions-call-stack-call-by-value-vs-reference-26-sep-2026)
 
 ---
 
@@ -497,9 +495,11 @@ int main() {
 ### Homework
 1. Solve all 20 practice questions above and submit your `.cpp` file.
 2. Try rewriting Q11 (power function) and Q19 (factorial) **recursively**, and note the difference in stack behavior compared to the loop-based version.
+
 ---
+
 ## Session 7: Selection Sort & Bubble Sort (29 Sep 2026)
----
+
 ### Topics Covered
 
 #### 1. Why Sorting?
@@ -585,6 +585,8 @@ void bubbleSort(vector<int>& arr) {
   - [Selection Sort (GeeksforGeeks)](https://www.geeksforgeeks.org/dsa/selection-sort-algorithm-2/)
 - **Bubble Sort**
   - [Bubble Sort (GeeksforGeeks)](https://www.geeksforgeeks.org/dsa/bubble-sort-algorithm/)
+- **Insertion Sort** (pending homework from Session 5)
+  - [Insertion Sort (GeeksforGeeks)](https://www.geeksforgeeks.org/dsa/insertion-sort-algorithm/)
 - **Sorting practice**
   - [Sorting Algorithms – takeUforward](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/) (Striver A2Z sheet, Sorting section)
 
@@ -614,8 +616,6 @@ void bubbleSort(vector<int>& arr) {
    2. When would you prefer selection sort over bubble sort (hint: think about the number of swaps)?
    3. Finish the pending homework from Session 5: **insertion sort**, and compare all three sorting algorithms in a table.
 
-
-   ---
 ---
 
 ## Session 8: OOPs Basics, Procedural vs OOP, Class & Object, Constructors (05 Oct 2026)
@@ -922,7 +922,24 @@ public:
 ---
 
 ### Resources
-  - [OOPs Recource ](https://www.w3schools.com/cpp/cpp_oop.asp)
+- **OOP overview**
+  - [OOP in C++ – W3Schools](https://www.w3schools.com/cpp/cpp_oop.asp)
+  - [Object Oriented Programming in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/object-oriented-programming-in-cpp/)
+- **Classes, objects and methods**
+  - [C++ Classes and Objects – W3Schools](https://www.w3schools.com/cpp/cpp_classes.asp)
+  - [C++ Class Methods – W3Schools](https://www.w3schools.com/cpp/cpp_class_methods.asp)
+- **Constructors**
+  - [C++ Constructors – W3Schools](https://www.w3schools.com/cpp/cpp_constructors.asp)
+- **Encapsulation (access specifiers, getters and setters)**
+  - [Encapsulation in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/encapsulation-in-cpp/)
+- **Pillars preview (covered in later sessions)**
+  - [Abstraction in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/abstraction-in-cpp/)
+  - [Inheritance in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/inheritance-in-c/)
+  - [Polymorphism in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/cpp-polymorphism/)
+- **Preparation for the next session (`new`/`delete` and pointers)**
+  - [new and delete Operators in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/new-and-delete-operators-in-cpp-for-dynamic-memory/)
+  - [Pointers and References in C++ – GeeksforGeeks](https://www.geeksforgeeks.org/cpp/pointers-and-references-in-c/)
+
 ---
 
 ### Practice Questions
