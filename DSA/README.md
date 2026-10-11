@@ -981,4 +981,4 @@ int main() {
    3. Can a constructor be `private`? Can a constructor have a return type? Why or why not?
    4. What is the difference between a shallow copy and a deep copy?
    5. What happens if we don't write any constructor in a class?
-7. Read about the **`new` and `delete`** operators and **pointers to objects**, as preparation for the next OOP topics: inheritance and polymorphism.
+7. Read about the **`new` and `delete`** operators and **pointers to objects**, as preparation for the next OOP topics:  inheritance and polymorphism.
